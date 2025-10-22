@@ -15,19 +15,19 @@ const Footer: React.FC = () => {
         </div>
 
         <div className='space-y-[20px]'>
-          <nav className="flex gap-12">
+          <nav className="flex justify-center">
             <a 
               href="#about" 
               className="text-white hover:text-gray-300 transition-colors duration-200"
             >
               About Drape
             </a>
-            <a 
+            {/* <a 
               href="#works" 
               className="text-white hover:text-gray-300 transition-colors duration-200"
             >
               Our Works
-            </a>
+            </a> */}
           </nav>
           <a 
               href="mailto:drapelive@gmail.com" 
