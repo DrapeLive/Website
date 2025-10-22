@@ -13,7 +13,14 @@ export const Header: React.FC = () => {
         </div>
         <nav className="flex items-center gap-6 md:gap-8">
           <NavLink href="#about">About</NavLink>
-          <Button onClick={() => setOpen(true)}>Contact Drape</Button>
+          <Button
+            onClick={() => {
+              console.log("clicked!");
+              setOpen(true);
+            }}
+          >
+            Contact Drape
+          </Button>
 
           {open && (
             <div className="fixed inset-0 flex items-center justify-center bg-black/50">
