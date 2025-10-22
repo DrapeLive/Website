@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink, Button } from '../../components/ui';
+import Button from '../ui/Button';
+import { NavLink } from '../ui/NavLink';
 
 export const Header: React.FC = () => (
   <header className="fixed top-0 left-0 right-0 z-50">

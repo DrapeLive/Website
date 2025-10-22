@@ -1,5 +1,6 @@
+"use client"
 import React from "react";
-import { Header } from "../components/layout";
+import { Header } from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import About from "../components/About";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
@@ -26,7 +27,7 @@ const HeroSection: React.FC = () => (
   </section>
 );
 
-export const Home: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-beige-light">
       <Header />
@@ -36,3 +37,5 @@ export const Home: React.FC = () => {
     </div>
   );
 };
+
+export default Home;
