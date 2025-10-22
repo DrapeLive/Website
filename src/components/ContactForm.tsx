@@ -116,12 +116,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
         ></textarea>
       </div>
       <div className="flex items-center gap-15 justify-between">
-        <button onClick={onClose} disabled={loading}>
-          Cancel
-        </button>
-        <ActionButton type="submit" disabled={loading}>
-          {loading ? "Sending..." : "Send Message"}
-        </ActionButton>
+        <button onClick={onClose}>Cancel</button>
+        <ActionButton>{loading ? "Sending..." : "Send Message"}</ActionButton>
       </div>
     </form>
   );
