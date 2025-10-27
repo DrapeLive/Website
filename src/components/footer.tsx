@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           />
         </div>
 
-        <div className='flex flex-col items-center space-y-[20px]'>
+        <div className='flex flex-col items-center space-y-[15px]'>
           <nav className="flex justify-center items-center">
             <a 
               href="#about" 
