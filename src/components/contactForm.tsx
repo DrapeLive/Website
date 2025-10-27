@@ -55,9 +55,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-6 bg-white rounded-lg shadow-lg max-w-md mx-auto min-w-sm"
+      className="p-6 bg-background rounded-lg shadow-lg max-w-md mx-auto min-w-sm"
     >
-      <h2 className="text-2xl font-semibold mb-6 text-gray-800">Contact Us</h2>
+      <h2 className="text-4xl font-bold mb-6 text-center">Contact Drape</h2>
       {status && (
         <p
           className={`mb-4 text-center ${status.startsWith("Error") ? "text-red-500" : "text-green-500"}`}
@@ -68,14 +68,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
       <div className="mb-4">
         <label
           htmlFor="fullName"
-          className="block text-gray-700 text-sm md:text-lg font-bold mb-2"
+          className="block text-sm md:text-lg font-bold mb-2"
         >
           Full Name
         </label>
         <input
           type="text"
           id="fullName"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           disabled={loading}
@@ -84,14 +84,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
       <div className="mb-4">
         <label
           htmlFor="contact"
-          className="block text-gray-700 text-sm md:text-lg font-bold mb-2"
+          className="block text-sm md:text-lg font-bold mb-2"
         >
-          Contact Number or Email <span className="text-red-500">*</span>
+          Contact Number OR Email <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
           id="contact"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           value={contact}
           onChange={(e) => setContact(e.target.value)}
           required
@@ -101,21 +101,21 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
       <div className="mb-6">
         <label
           htmlFor="message"
-          className="block text-gray-700 text-sm md:text-lg font-bold mb-2"
+          className="block text-sm md:text-lg font-bold mb-2"
         >
           Message
         </label>
         <textarea
           id="message"
           rows={5}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           disabled={loading}
         ></textarea>
       </div>
       <div className="flex items-center gap-15 justify-between">
-        <button className="cursor-pointer" onClick={onClose}>
+        <button className="cursor-pointer hover:underline" onClick={onClose}>
           Cancel
         </button>
         <button className="cursor-pointer bg-black text-white px-4 md:px-6 py-2 md:py-2.5 rounded-[15px] hover:bg-gray-800 transition-colors flex items-center gap-2 text-sm md:text-lg md:text-base font-medium">

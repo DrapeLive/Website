@@ -18,7 +18,7 @@ const About: React.FC = () => {
   return (
     <section id="about" className="px-[20px]">
       <div className="mx-auto">
-        <p className="md:text-center mb-8 md:mb-12 font-bold text-5xl leading-12 lg:text-[64px]">
+        <p className="md:text-center mb-8 md:mb-12 font-bold text-5xl leading-12 lg:text-[64px] pt-5">
           About Drape
         </p>
         <div className="flex flex-col md:flex-row mb-[60px] md:px-[80px] md:items-center gap-8">
