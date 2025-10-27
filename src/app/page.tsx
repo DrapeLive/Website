@@ -22,11 +22,11 @@ const HeroSection: React.FC = () => {
     <section className="min-h-screen pt-32 md:pt-40 pb-16 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="px-[20px] md:pl-[35px] space-y-6 md:space-y-4">
-            <p className="text-5xl leading-12 md:leading-14 lg:text-[64px] font-[alegreyaSans] font-bold text-black">
+          <div className="pl-5 space-y-6 md:space-y-4">
+            <p className="text-5xl leading-12 md:leading-14 lg:text-[64px] font-[alegreyaSans] font-bold">
               We build softwares that defines YOU.
             </p>
-            <div className="text-2xl lg:text-[28px] md:leading-8 max-w-xl">
+            <div className="text-2xl lg:text-[30px] md:leading-8">
               Running your business in itself is a hassle. Drape will manage the
               software-side for you. From web to mobile interfaces, we got you
               covered.
