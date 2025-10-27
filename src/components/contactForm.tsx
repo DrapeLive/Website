@@ -55,7 +55,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-6 bg-white rounded-lg shadow-lg max-w-md mx-auto"
+      className="p-6 bg-white rounded-lg shadow-lg max-w-md mx-auto min-w-sm"
     >
       <h2 className="text-2xl font-semibold mb-6 text-gray-800">Contact Us</h2>
       {status && (
@@ -68,7 +68,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
       <div className="mb-4">
         <label
           htmlFor="fullName"
-          className="block text-gray-700 text-sm font-bold mb-2"
+          className="block text-gray-700 text-sm md:text-lg font-bold mb-2"
         >
           Full Name
         </label>
@@ -84,7 +84,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
       <div className="mb-4">
         <label
           htmlFor="contact"
-          className="block text-gray-700 text-sm font-bold mb-2"
+          className="block text-gray-700 text-sm md:text-lg font-bold mb-2"
         >
           Contact Number or Email <span className="text-red-500">*</span>
         </label>
@@ -101,7 +101,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
       <div className="mb-6">
         <label
           htmlFor="message"
-          className="block text-gray-700 text-sm font-bold mb-2"
+          className="block text-gray-700 text-sm md:text-lg font-bold mb-2"
         >
           Message
         </label>
@@ -115,8 +115,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
         ></textarea>
       </div>
       <div className="flex items-center gap-15 justify-between">
-        <button onClick={onClose}>Cancel</button>
-        <button className="bg-black text-white px-4 md:px-6 py-2 md:py-2.5 rounded-[15px] hover:bg-gray-800 transition-colors flex items-center gap-2 text-sm md:text-base font-medium">{loading ? "Sending..." : "Send Message"}</button>
+        <button className="cursor-pointer" onClick={onClose}>
+          Cancel
+        </button>
+        <button className="cursor-pointer bg-black text-white px-4 md:px-6 py-2 md:py-2.5 rounded-[15px] hover:bg-gray-800 transition-colors flex items-center gap-2 text-sm md:text-lg md:text-base font-medium">
+          {loading ? "Sending..." : "Send Message"}
+        </button>
       </div>
     </form>
   );
