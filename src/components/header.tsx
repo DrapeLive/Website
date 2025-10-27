@@ -17,13 +17,13 @@ export const Header: React.FC = () => {
         <nav className="flex items-center gap-6 md:gap-8">
           <NavLink href="#about">About</NavLink>
           <button
-          className="bg-black text-white px-4 md:px-6 py-2 md:py-2.5 rounded-[15px] hover:bg-gray-800 transition-colors flex items-center gap-2 text-sm md:text-base font-medium"
+          className="bg-black text-white px-3 md:h-[36px] rounded-[15px] hover:bg-gray-800 transition-colors flex items-center gap-2 text-sm md:text-base font-medium"
             onClick={() => {
               setOpen(true);
             }}
           >
             <div>Contact Drape</div>
-            <div className="border-l justify-center ">
+            <div className="flex items-center h-[36px] border-l justify-center ">
               <IconChevronRight/>
             </div>
           </button>
