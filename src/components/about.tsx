@@ -16,16 +16,16 @@ const About: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
   return (
-    <section id="about" className="py-16">
+    <section id="about" className="px-[20px]">
       <div className="mx-auto">
-        <h2 className="text-center mb-12 font-bold text-[36px]">About Drape</h2>
-        <div className="flex flex-col md:flex-row py-[12px] px-[80px] items-center gap-8">
-          <div className="md:w-1/2 text-[24px] px-[40px]">
+        <p className="md:text-center md:mb-12 font-bold text-[36px]">About Drape</p>
+        <div className="flex flex-col md:flex-row mb-[60px] md:px-[80px] items-center gap-8">
+          <div className="md:w-1/2 text-[24px] md:px-[36px]">
             We are a set of students fueled by the passion to build meaningful
             softwares. Having built many softwares ourselves - we assure quality
             and consistency
           </div>
-          <div className="md:w-1/2 text-[64px]">
+          <div className="md:w-1/2 text-[24px] md:text-[50px]">
             <span>We build </span>
             <span className="font-bold">
               <AnimatePresence mode="wait">

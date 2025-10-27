@@ -6,10 +6,10 @@ import About from "../components/about";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const HeroSection: React.FC = () => (
-  <section className="min-h-screen pt-32 md:pt-40 pb-16 px-6 md:px-12">
+  <section className="min-h-screen pt-32 md:pt-40 px-6 md:px-12">
     <div className="max-w-7xl mx-auto">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div className="pl-[35px] space-y-6 md:space-y-2">
+        <div className="pl-[20px] space-y-6 md:space-y-2">
           <p className="text-4xl md:text-5xl lg:text-[64px] font-alegreyaSans font-bold text-black">
             We build softwares that defines YOU
           </p>
