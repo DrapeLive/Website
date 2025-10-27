@@ -19,14 +19,14 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen pt-32 md:pt-40 pb-16 px-6 md:px-12">
+    <section className="min-h-screen pt-32 md:pt-40 pb-16 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="pl-[35px] space-y-6 md:space-y-2">
-            <p className="text-4xl md:text-5xl lg:text-[64px] font-alegreyaSans font-bold text-black">
+          <div className="px-[20px] md:pl-[35px] space-y-6 md:space-y-2">
+            <p className="text-5xl leading-12 lg:text-[64px] font-[alegreyaSans] font-bold text-black">
               We build softwares that defines YOU
             </p>
-            <div className="text-base md:text-lg lg:text-[24px] max-w-xl">
+            <div className="text-2xl lg:text-[28px] md:leading-8 max-w-xl">
               Running your business in itself is a hassle. Drape will manage the
               software-side for you. From web to mobile interfaces, we got you
               covered.
@@ -53,8 +53,10 @@ const Home: React.FC = () => {
     <div className="min-h-screen bg-beige-light">
       <Header />
       <HeroSection />
-      <About />
-      <Footer />
+      <div className="flex flex-col justify-between min-h-screen pt-20">
+        <About />
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
           <Image
             src="/drape-logo.svg"
             alt="Drape Logo"
-            className="md:w-[40px] md:h-[40px] w-[30px] h-[30px]"
+            className="md:w-10 md:h-10 w-[30px] h-[30px]"
             width={1}
             height={1}
           />
@@ -23,13 +23,13 @@ export const Header: React.FC = () => {
         <nav className="flex items-center gap-6 md:gap-8">
           <NavLink href="#about">About</NavLink>
           <button
-            className="cursor-pointer bg-black text-white px-2 md:px-3 md:h-[36px] rounded-[8px] hover:bg-gray-800 transition-colors flex items-center gap-2 text-sm md:text-lg"
+            className="cursor-pointer bg-black text-white px-3 md:h-9 rounded-lg hover:bg-gray-800 transition-colors flex items-center gap-2 text-lg"
             onClick={() => {
               setOpen(true);
             }}
           >
             <div className="md:p-4">Contact Drape</div>
-            <div className="flex items-center h-[36px] border-l pl-2 justify-center ">
+            <div className="flex items-center h-9 border-l pl-2 justify-center ">
               <IconChevronRight />
             </div>
           </button>
