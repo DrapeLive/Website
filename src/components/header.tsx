@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { NavLink } from "./navLink";
 import ContactForm from "./contactForm";
 import Image from "next/image";
+import { IconChevronRight } from "@tabler/icons-react";
 
 export const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,10 @@ export const Header: React.FC = () => {
               setOpen(true);
             }}
           >
-            Contact Drape
+            <div>Contact Drape</div>
+            <div className="border-l justify-center ">
+              <IconChevronRight/>
+            </div>
           </button>
 
           {open && (
