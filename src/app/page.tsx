@@ -4,6 +4,7 @@ import { Header } from "../components/header";
 import Footer from "../components/footer";
 import About from "../components/about";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import TeamSection from "@/components/team";
 
 const HeroSection: React.FC = () => {
   const [lottieAnimSrc, setLottieAnimSrc] = useState<string>(
@@ -54,6 +55,7 @@ const Home: React.FC = () => {
       <Header />
       <HeroSection />
       <div className="flex flex-col justify-between min-h-screen pt-20">
+        <TeamSection/>
         <About />
         <Footer />
       </div>
