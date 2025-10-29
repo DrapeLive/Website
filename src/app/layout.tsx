@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   creator: "Drape",
   publisher: "Drape",
-  metadataBase: new URL("https:///drapelive.vercel.app"),
+  metadataBase: new URL("https://drapelive.vercel.app"),
   openGraph: {
     title: "Drape - Software that defines YOU.",
     description:
