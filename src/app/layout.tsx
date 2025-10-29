@@ -69,6 +69,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta
+          name="google-site-verification"
+          content="lCwwvyRbzwwnEKfbKLnbCM2z2wvnaQKevjuLfBD08A8"
+        />
         <meta name="apple-mobile-web-app-title" content="Drape" />
       </head>
       <body
