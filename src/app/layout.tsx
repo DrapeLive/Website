@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Drape",
     images: [
       {
-        url: "/opengraph-image.jpg",
+        url: "https://drapelive.vercel.app/opengraph-image.jpg",
         width: 1200,
         height: 630,
         alt: "Drape",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "Drape - Software that defines YOU.",
     description:
       "Drape builds custom web and mobile software solutions that elevate your business. From innovative web applications to intuitive mobile interfaces, we handle the software side so you can focus on your business.",
-    images: ["/opengraph-image.jpg"],
+    images: ["https://drapelive.vercel.app/opengraph-image.jpg"],
   },
 };
 
