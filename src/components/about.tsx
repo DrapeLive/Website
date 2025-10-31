@@ -27,7 +27,7 @@ const About: React.FC = () => {
             softwares. Having built many softwares ourselves - we assure quality
             and consistency
           </div>
-          <div className="md:w-1/2 text-4xl md:leading-8 md:text-[50px]">
+          <div className="md:w-1/2 h-[90px] text-4xl md:leading-8 md:text-[50px]">
             <span>We build </span>
             <span className="font-bold">
               <AnimatePresence mode="wait">
