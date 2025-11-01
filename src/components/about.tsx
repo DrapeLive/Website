@@ -16,7 +16,7 @@ const About: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
   return (
-    <section id="about" className="px-[20px]">
+    <section id="about" className="px-5 py-20 md:py-0">
       <div className="mx-auto">
         <p className="md:text-center mb-8 md:mb-12 font-bold text-5xl leading-12 lg:text-[64px] pt-5">
           About Drape

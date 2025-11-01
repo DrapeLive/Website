@@ -5,8 +5,8 @@ import Footer from "../components/footer";
 import About from "../components/about";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import TeamSection from "@/components/team";
-import { WordsPullUp } from "@/components/ui/words-pull-up";
-import { motion } from 'motion/react';
+import { motion } from "motion/react";
+import HeroText from "@/components/animations/heroText";
 
 const HeroSection: React.FC = () => {
   const [lottieAnimSrc, setLottieAnimSrc] = useState<string>(
@@ -26,14 +26,15 @@ const HeroSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="pl-5 space-y-6 md:space-y-4">
-            {/* <p className="text-5xl leading-12 md:leading-14 lg:text-[64px] font-[alegreyaSans] font-bold">
-              We build softwares that defines YOU.
-            </p> */}
-            <WordsPullUp text="We build softwares that defines YOU." className="text-5xl leading-12 md:leading-14 lg:text-[64px] font-[alegreyaSans] font-bold"/>
+            <HeroText
+              content="We build softwares that defines YOU."
+              emphasis="YOU"
+              className="text-5xl leading-12 md:leading-14 lg:text-[64px] font-[alegreyaSans] font-bold"
+            />
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }} 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
               className="text-2xl lg:text-[30px] md:leading-8"
             >
               Running your business in itself is a hassle. Drape will manage the
@@ -63,7 +64,7 @@ const Home: React.FC = () => {
       <Header />
       <HeroSection />
       <div className="flex flex-col justify-between min-h-screen pt-20">
-        <TeamSection/>
+        <TeamSection />
         <About />
         <Footer />
       </div>

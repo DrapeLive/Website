@@ -1,8 +1,5 @@
 import React from "react";
 import { IconArrowRight } from "@tabler/icons-react";
-import Link from "next/link";
-import Image from "next/image";
-
 interface TeamMember {
   name: string;
   role: string;
@@ -27,13 +24,13 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center md:px-0 px-5">
+    <div id="team" className="flex items-center justify-center md:px-0 px-5">
       <div className="w-[1143px] h-[600px]">
         <div className="bg-[#CFDBC2] rounded-lg p-6 md:p-12 py-20 md:py-12">
           <p className="hidden md:flex text-2xl md:text-5xl font-bold mb-6 md:mb-8">
             The Team
           </p>
-          <p className="md:hidden text-center text-2xl font-bold mb-6 ">
+          <p className="md:hidden text-center text-4xl font-bold pb-6 ">
             The Team
           </p>
 
@@ -74,20 +71,20 @@ const TeamSection: React.FC = () => {
                 key={index}
                 className="flex flex-col items-center text-center"
               >
-                <div className="w-20 h-20 rounded-lg overflow-hidden mb-3 bg-green-300">
+                <div className="w-30 h-30 rounded-lg overflow-hidden mb-3 bg-green-300">
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="font-bold text-base mb-1">{member.name}</h3>
+                <h3 className="font-bold text-xl mb-1">{member.name}</h3>
                 <p className="text-sm text-gray-700 mb-2">{member.role}</p>
                 <a
                   href={member.profile}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-sm font-medium hover:gap-2 transition-all"
+                  className="flex items-center gap-1 text-lg font-medium hover:gap-2 transition-all"
                 >
                   View Profile
                   <IconArrowRight size={16} />
