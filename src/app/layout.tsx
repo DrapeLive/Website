@@ -70,9 +70,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/*Drape's account google search console*/}
         <meta
           name="google-site-verification"
-          content="lCwwvyRbzwwnEKfbKLnbCM2z2wvnaQKevjuLfBD08A8"
+          content="buQyx0f3emsnqiaWiw2TxBCYLEwbDl--60Ptyc356Ls"
         />
         <meta name="apple-mobile-web-app-title" content="Drape" />
       </head>
