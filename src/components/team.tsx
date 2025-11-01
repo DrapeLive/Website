@@ -16,13 +16,13 @@ const TeamSection: React.FC = () => {
       name: "Mohammed Muflih",
       role: "App Developer · Web Developer",
       image: "/muflih-photo.png",
-      profile: "https://www.linkedin.com/in/muflih9605",
+      profile: "https://muflih.me/",
     },
     {
       name: "Mohammed Fahad",
       role: "Designer · Web Developer",
       image: "/fahad-photo.png",
-      profile: "https://www.linkedin.com/in/just-fahad/",
+      profile: "https://justfahad.me/",
     },
   ];
 
