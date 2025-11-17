@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
             <HeroText
               content="We build softwares that defines YOU."
               emphasis="YOU"
-              className="text-5xl leading-12 md:leading-14 lg:text-[64px] font-[alegreyaSans] font-bold"
+              className="text-5xl leading-12 md:leading-14 lg:text-[64px] font-bold"
             />
             <motion.div
               initial={{ opacity: 0 }}

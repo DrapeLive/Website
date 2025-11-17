@@ -44,7 +44,7 @@ export default function HeroText({
   const words = content.split(" ");
 
   return (
-    <motion.p
+    <motion.h1
       className={className ? className : ""}
       variants={sentence}
       initial="hidden"
@@ -61,6 +61,6 @@ export default function HeroText({
           {word}
         </motion.span>
       ))}
-    </motion.p>
+    </motion.h1>
   );
 }

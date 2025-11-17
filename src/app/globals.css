@@ -22,6 +22,10 @@ p {
     font-family: var(--font-alegreya-sans), sans-serif;
 }
 
+h1 {
+    font-family: var(--font-alegreya-sans);
+}
+
 html {
     scroll-behavior: smooth;
 }

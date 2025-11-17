@@ -30,12 +30,6 @@ const Footer: React.FC = () => {
             >
               The Team
             </a>
-            {/* <a
-              href="#works"
-              className="text-white hover:text-gray-300 transition-colors duration-200"
-            >
-              Our Works
-            </a> */}
           </nav>
           <a
             href="mailto:drapelive@gmail.com"

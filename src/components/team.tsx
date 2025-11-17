@@ -27,12 +27,12 @@ const TeamSection: React.FC = () => {
     <div id="team" className="flex items-center justify-center md:px-0 px-5">
       <div className="w-[1143px] h-[600px]">
         <div className="bg-[#CFDBC2] rounded-lg p-6 md:p-12 py-20 md:py-12">
-          <p className="hidden md:flex text-2xl md:text-5xl font-bold mb-6 md:mb-8">
+          <h2 className="hidden md:flex text-2xl md:text-5xl font-bold mb-6 md:mb-8">
             The Team
-          </p>
-          <p className="md:hidden text-center text-4xl font-bold pb-6 ">
+          </h2>
+          <h2 className="md:hidden text-center text-4xl font-bold pb-6 ">
             The Team
-          </p>
+          </h2>
 
           {/* Desktop Layout - Grid */}
           <div className="hidden md:flex md:justify-between">
