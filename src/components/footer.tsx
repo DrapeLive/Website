@@ -25,6 +25,18 @@ const Footer: React.FC = () => {
               About Drape
             </a>
             <a
+              href="#services"
+              className="text-white hover:text-gray-300 transition-colors text-lg duration-200"
+            >
+              Services
+            </a>
+            <a
+              href="#projects"
+              className="text-white hover:text-gray-300 transition-colors text-lg duration-200"
+            >
+              Projects
+            </a>
+            <a
               href="#team"
               className="text-white hover:text-gray-300 transition-colors text-lg duration-200"
             >

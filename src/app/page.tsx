@@ -7,6 +7,8 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import TeamSection from "@/components/team";
 import { motion } from "motion/react";
 import HeroText from "@/components/animations/heroText";
+import ServicesSection from "@/components/services";
+import ProjectsSection from "@/components/projects";
 
 const HeroSection: React.FC = () => {
   const [lottieAnimSrc, setLottieAnimSrc] = useState<string>(
@@ -46,6 +48,7 @@ const HeroSection: React.FC = () => {
             <DotLottieReact
               src={String(lottieAnimSrc) || "hero-anim-load.json"}
               dotLottieRefCallback={(dotLottie) => {
+                if (!dotLottie) return;
                 dotLottie!.addEventListener("complete", onComplete);
               }}
               loop={isLooping}
@@ -64,6 +67,8 @@ const Home: React.FC = () => {
       <Header />
       <HeroSection />
       <div className="flex flex-col min-h-screen pt-20 gap-20 md:gap-32">
+        <ProjectsSection />
+        <ServicesSection />
         <TeamSection />
         <About />
         <Footer />
