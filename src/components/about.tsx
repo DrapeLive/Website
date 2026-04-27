@@ -18,16 +18,16 @@ const About: React.FC = () => {
   return (
     <section id="about" className="px-5 py-20 md:py-0">
       <div className="mx-auto">
-        <h2 className="md:text-center mb-8 md:mb-12 font-bold text-5xl leading-12 lg:text-[64px] pt-5">
+        <h2 className="text-center md:text-center mb-8 md:mb-12 font-bold text-5xl leading-12 lg:text-[64px] pt-5">
           About Drape
         </h2>
-        <div className="flex flex-col md:flex-row mb-[60px] md:px-[80px] md:items-center gap-8">
-          <h3 className="md:w-1/2 text-2xl lg:text-[28px] md:leading-8 md:px-[36px]">
+        <div className="flex flex-col md:flex-row mb-[60px] items-center md:items-start md:px-[80px] gap-8">
+          <h3 className="md:w-1/2 text-2xl lg:text-[28px] md:leading-8 md:px-[36px] text-center md:text-left">
             We are a set of students fueled by the passion to build meaningful
             softwares. Having built many softwares ourselves - we assure quality
             and consistency
           </h3>
-          <div className="md:w-1/2 h-[90px] text-4xl md:leading-8 md:text-[50px]">
+          <div className="md:w-1/2 text-4xl md:leading-8 md:text-[50px] text-center md:text-left">
             <span>We build </span>
             <span className="font-bold">
               <AnimatePresence mode="wait">

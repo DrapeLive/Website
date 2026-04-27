@@ -24,9 +24,9 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <div id="team" className="flex items-center justify-center md:px-0 px-5">
-      <div className="w-[1143px] h-[600px]">
-        <div className="bg-[#CFDBC2] rounded-lg p-6 md:p-12 py-20 md:py-12">
+    <div id="team" className="flex items-center justify-center px-5 md:px-0">
+      <div className="w-full max-w-5xl">
+        <div className="bg-[#CFDBC2] rounded-lg p-6 md:p-12">
           <h2 className="hidden md:flex text-2xl md:text-5xl font-bold mb-6 md:mb-8">
             The Team
           </h2>
@@ -35,7 +35,7 @@ const TeamSection: React.FC = () => {
           </h2>
 
           {/* Desktop Layout - Grid */}
-          <div className="hidden md:flex md:justify-between">
+          <div className="hidden md:flex md:justify-center md:gap-16">
             {teamMembers.map((member, index) => (
               <div key={index} className="flex gap-8">
                 <div className="flex rounded-lg items-center justify-center">

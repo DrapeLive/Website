@@ -22,10 +22,10 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen pt-32 md:pt-40 pb-16 md:px-12">
+    <section className="flex items-center min-h-screen md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="pl-5 space-y-6 md:space-y-4">
+          <div className="space-y-6 md:space-y-4">
             <HeroText
               content="We build softwares that defines YOU."
               emphasis="YOU"
