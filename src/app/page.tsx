@@ -22,10 +22,10 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="flex items-center min-h-screen md:px-12">
+    <section className="flex items-center min-h-screen md:px-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="space-y-6 md:space-y-4">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+          <div className="space-y-6 md:space-y-4 lg:col-span-3">
             <HeroText
               content="We build softwares that defines YOU."
               emphasis="YOU"
@@ -35,14 +35,14 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-2xl lg:text-[30px] md:leading-8"
+              className="text-2xl lg:text-[28px] md:leading-8"
             >
               Running your business in itself is a hassle. Drape will manage the
               software-side for you. From web to mobile interfaces, we got you
               covered.
             </motion.div>
           </div>
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-end lg:col-span-2">
             <DotLottieReact
               src={String(lottieAnimSrc) || "hero-anim-load.json"}
               dotLottieRefCallback={(dotLottie) => {
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
     <div className="min-h-screen bg-beige-light">
       <Header />
       <HeroSection />
-      <div className="flex flex-col justify-between min-h-screen pt-20">
+      <div className="flex flex-col min-h-screen pt-20 gap-20 md:gap-32">
         <TeamSection />
         <About />
         <Footer />

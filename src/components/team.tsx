@@ -24,7 +24,7 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <div id="team" className="flex items-center justify-center px-5 md:px-0">
+    <div id="team" className="max-w-7xl mx-auto px-5 md:px-0 py-20 md:py-32">
       <div className="w-full max-w-5xl">
         <div className="bg-[#CFDBC2] rounded-lg p-6 md:p-12">
           <h2 className="hidden md:flex text-2xl md:text-5xl font-bold mb-6 md:mb-8">
