@@ -1,18 +1,28 @@
 import React from "react";
-import { IconArrowLeft, IconPackage, IconCheck, IconUsers, IconShoppingCart, IconSettings } from "@tabler/icons-react";
+import {
+  IconArrowLeft,
+  IconPackage,
+  IconCheck,
+  IconUsers,
+  IconShoppingCart,
+  IconSettings,
+} from "@tabler/icons-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const StockFlowPage: React.FC = () => {
   const userTypes = [
     {
       icon: <IconSettings size={32} className="text-black" />,
       title: "Warehouse Managers",
-      description: "Manage inventory, track all orders, and coordinate dispatch",
+      description:
+        "Manage inventory, track all orders, and coordinate dispatch",
     },
     {
       icon: <IconUsers size={32} className="text-black" />,
       title: "Field Sales Agents",
-      description: "Place orders on-the-go using QR scanning and a simplified mobile interface",
+      description:
+        "Place orders on-the-go using QR scanning and a simplified mobile interface",
     },
     {
       icon: <IconShoppingCart size={32} className="text-black" />,
@@ -73,14 +83,33 @@ const StockFlowPage: React.FC = () => {
   ];
 
   const benefits = [
-    { feature: "QR-based workflow", benefit: "Eliminate errors, speed up item identification" },
-    { feature: "Mobile-first design", benefit: "Agents can take orders directly from customers" },
+    {
+      feature: "QR-based workflow",
+      benefit: "Eliminate errors, speed up item identification",
+    },
+    {
+      feature: "Mobile-first design",
+      benefit: "Agents can take orders directly from customers",
+    },
     { feature: "Real-time inventory", benefit: "Always know what's in stock" },
-    { feature: "Integrated invoices", benefit: "Professional documentation for every order" },
-    { feature: "Order tracking", benefit: "Customer knows exactly where their order is" },
+    {
+      feature: "Integrated invoices",
+      benefit: "Professional documentation for every order",
+    },
+    {
+      feature: "Order tracking",
+      benefit: "Customer knows exactly where their order is",
+    },
   ];
 
-  const techStack = ["Next.js 16", "React 19", "Tailwind CSS", "Radix UI", "Django", "Python"];
+  const techStack = [
+    "Next.js 16",
+    "React 19",
+    "Tailwind CSS",
+    "Radix UI",
+    "Django",
+    "Python",
+  ];
 
   return (
     <div className="min-h-screen bg-beige-light">
@@ -99,8 +128,14 @@ const StockFlowPage: React.FC = () => {
       <main className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16">
-            <div className="w-24 h-24 md:w-32 md:h-32 bg-[#CFDBC2] rounded-2xl flex items-center justify-center">
-              <IconPackage size={48} className="text-black" />
+            <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center">
+              <Image
+                src="/projects/stockflow/stockflow-logo.png"
+                alt="stockFlow logo"
+                width={128}
+                height={128}
+                className="object-cover  rounded-2xl"
+              />
             </div>
             <div className="text-center md:text-left">
               <h1 className="text-4xl md:text-6xl font-bold mb-4">stockFlow</h1>
@@ -114,15 +149,25 @@ const StockFlowPage: React.FC = () => {
             <section>
               <h2 className="text-2xl md:text-3xl font-bold mb-4">About</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Stock Flow is a comprehensive B2B order management platform designed specifically for apparel and textile businesses. It bridges the gap between warehouse inventory managers, field sales agents, and retail customers—streamlining the entire order-to-delivery workflow through a modern, mobile-first interface.
+                Stock Flow is a comprehensive B2B order management platform
+                designed specifically for apparel and textile businesses. It
+                bridges the gap between warehouse inventory managers, field
+                sales agents, and retail customers—streamlining the entire
+                order-to-delivery workflow through a modern, mobile-first
+                interface.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Who is it for?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                Who is it for?
+              </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {userTypes.map((user, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 border border-gray-100">
+                  <div
+                    key={index}
+                    className="bg-white rounded-xl p-6 border border-gray-100"
+                  >
                     <div className="w-14 h-14 bg-[#CFDBC2] rounded-full flex items-center justify-center mb-4">
                       {user.icon}
                     </div>
@@ -134,16 +179,25 @@ const StockFlowPage: React.FC = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Key Features</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                Key Features
+              </h2>
               <div className="space-y-10">
                 {featureCategories.map((category, index) => (
                   <div key={index}>
-                    <h3 className="text-xl md:text-2xl font-bold mb-4">{category.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4">
+                      {category.title}
+                    </h3>
                     <ul className="space-y-3">
                       {category.features.map((feature, fIndex) => (
                         <li key={fIndex} className="flex items-start gap-3">
-                          <IconCheck size={24} className="text-green-600 mt-0.5 flex-shrink-0" />
-                          <span className="text-lg text-gray-700">{feature}</span>
+                          <IconCheck
+                            size={24}
+                            className="text-green-600 mt-0.5 flex-shrink-0"
+                          />
+                          <span className="text-lg text-gray-700">
+                            {feature}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -153,7 +207,9 @@ const StockFlowPage: React.FC = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Why Stock Flow?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                Why Stock Flow?
+              </h2>
               <div className="bg-white rounded-xl overflow-hidden border border-gray-100">
                 <table className="w-full">
                   <thead>
@@ -164,9 +220,18 @@ const StockFlowPage: React.FC = () => {
                   </thead>
                   <tbody>
                     {benefits.map((item, index) => (
-                      <tr key={index} className={index !== 0 ? "border-t border-gray-100" : ""}>
-                        <td className="py-4 px-6 font-medium">{item.feature}</td>
-                        <td className="py-4 px-6 text-gray-600">{item.benefit}</td>
+                      <tr
+                        key={index}
+                        className={
+                          index !== 0 ? "border-t border-gray-100" : ""
+                        }
+                      >
+                        <td className="py-4 px-6 font-medium">
+                          {item.feature}
+                        </td>
+                        <td className="py-4 px-6 text-gray-600">
+                          {item.benefit}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -175,7 +240,9 @@ const StockFlowPage: React.FC = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Tech Stack</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                Tech Stack
+              </h2>
               <div className="flex flex-wrap gap-3">
                 {techStack.map((tech) => (
                   <span

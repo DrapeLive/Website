@@ -1,22 +1,41 @@
 import React from "react";
 import { IconArrowRight, IconPackage } from "@tabler/icons-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   href: string;
+  banner?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, href }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  title,
+  description,
+  href,
+  banner,
+}) => {
   return (
     <Link href={href} className="block group">
       <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
-        <div className="h-48 bg-gradient-to-br from-[#CFDBC2] to-[#e8e8e8] flex items-center justify-center">
-          <IconPackage size={64} className="text-black/30" />
-        </div>
+        {banner ? (
+          <Image
+            src={banner}
+            alt={title}
+            width={400}
+            height={200}
+            className="w-full h-48 object-cover"
+          />
+        ) : (
+          <div className="h-48 bg-[#CFDBC2] flex items-center justify-center">
+            <IconPackage size={64} className="text-black/30" />
+          </div>
+        )}
         <div className="p-6">
-          <h3 className="text-2xl font-bold mb-2 group-hover:underline">{title}</h3>
+          <h3 className="text-2xl font-bold mb-2 group-hover:underline">
+            {title}
+          </h3>
           <p className="text-gray-600 mb-4 text-lg">{description}</p>
           <span className="inline-flex items-center gap-1 text-lg font-medium hover:gap-2 transition-all">
             View Project
@@ -35,6 +54,7 @@ const ProjectsSection: React.FC = () => {
       description:
         "Inventory management system designed to simplify stock tracking, optimize reorder points, and provide real-time insights for businesses of all sizes.",
       href: "/projects/stockflow",
+      banner: "/projects/stockflow/stockflow-banner.jpg",
     },
   ];
 
@@ -51,6 +71,7 @@ const ProjectsSection: React.FC = () => {
               title={project.title}
               description={project.description}
               href={project.href}
+              banner={project.banner}
             />
           ))}
         </div>
