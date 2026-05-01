@@ -9,6 +9,7 @@ import { motion } from "motion/react";
 import HeroText from "@/components/animations/heroText";
 import ServicesSection from "@/components/services";
 import ProjectsSection from "@/components/projects";
+import Faq from "@/components/faq";
 
 const HeroSection: React.FC = () => {
   const [lottieAnimSrc, setLottieAnimSrc] = useState<string>(
@@ -31,13 +32,13 @@ const HeroSection: React.FC = () => {
             <HeroText
               content="We build softwares that defines YOU."
               emphasis="YOU"
-              className="text-5xl leading-12 md:leading-14 lg:text-[64px] font-bold"
+              className="text-5xl leading-12 md:leading-14 lg:text-[56] font-bold"
             />
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-2xl lg:text-[28px] md:leading-8"
+              className="text-2xl lg:text-[32px] md:leading-11"
             >
               Running your business in itself is a hassle. Drape will manage the
               software-side for you. From web to mobile interfaces, we got you
@@ -67,10 +68,11 @@ const Home: React.FC = () => {
       <Header />
       <HeroSection />
       <div className="flex flex-col min-h-screen pt-20 gap-20 md:gap-32">
-        <ProjectsSection />
         <ServicesSection />
+        <ProjectsSection />
         <TeamSection />
         <About />
+        <Faq />
         <Footer />
       </div>
     </div>

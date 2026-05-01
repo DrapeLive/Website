@@ -9,6 +9,45 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "StockFlow — Inventory Management | Drape",
+  description:
+    "StockFlow is a real-time B2B order management system built by Drape — a software development company in India specialising in custom web and app development.",
+  keywords: [
+    "inventory management",
+    "web app",
+    "app development",
+    "software development company in india",
+  ],
+  openGraph: {
+    title: "StockFlow — B2B Order Management | Drape",
+    description: "Real-time inventory tracking built by Drape.",
+    url: "https://drapelive.vercel.app/projects/stockflow",
+    siteName: "Drape",
+    images: [
+      {
+        url: "https://drapelive.vercel.app/projects/stockflow/stockflow-banner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "StockFlow banner",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "StockFlow — B2B Order Management | Drape",
+    description: "Real-time inventory tracking built by Drape.",
+    images: [
+      "https://drapelive.vercel.app/projects/stockflow/stockflow-banner.jpg",
+    ],
+  },
+  alternates: {
+    canonical: "https://drapelive.vercel.app/projects/stockflow",
+  },
+};
 
 const StockFlowPage: React.FC = () => {
   const userTypes = [
@@ -148,7 +187,7 @@ const StockFlowPage: React.FC = () => {
           <div className="space-y-16">
             <section>
               <h2 className="text-2xl md:text-3xl font-bold mb-4">About</h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-xl text-gray-700 leading-relaxed">
                 Stock Flow is a comprehensive B2B order management platform
                 designed specifically for apparel and textile businesses. It
                 bridges the gap between warehouse inventory managers, field

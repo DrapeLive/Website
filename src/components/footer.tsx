@@ -51,12 +51,12 @@ const Footer: React.FC = () => {
             drapelive@gmail.com
           </a>
           <div className="md:hidden">
-            <p className="text-gray-500 text-md">&copy; 2025 Drape</p>
+            <p className="text-gray-500 text-md">&copy; 2026 Drape</p>
           </div>
         </div>
 
         <div className="hidden md:flex flex-col items-end gap-2">
-          <p className="text-gray-500 text-md mt-[40px]">&copy; 2025 Drape</p>
+          <p className="text-gray-500 text-md mt-[40px]">&copy; 2026 Drape</p>
         </div>
       </div>
     </footer>

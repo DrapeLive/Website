@@ -1,26 +1,27 @@
 "use client";
-
-import React from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { useEffect, useState } from "react";
 
 const words = [" Websites", " Mobile Apps"];
 
 const About: React.FC = () => {
-  const [index, setIndex] = useState(0);
+  const [wordIndex, setWordIndex] = useState(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % words.length);
+      setWordIndex((prev) => (prev + 1) % words.length);
     }, 2000);
     return () => clearInterval(timer);
   }, []);
+
   return (
     <section id="about" className="px-5 md:px-0 py-20 md:py-32">
       <div className="max-w-7xl mx-auto">
+        {/* Existing About header */}
         <h2 className="text-center md:text-center mb-8 md:mb-12 font-bold text-5xl leading-12 lg:text-[64px]">
           About Drape
         </h2>
+
         <div className="flex flex-col md:flex-row mb-[60px] items-center md:items-start gap-8">
           <h3 className="md:w-1/2 text-2xl lg:text-[28px] md:leading-8 text-center md:text-left">
             We are a set of students fueled by the passion to build meaningful
@@ -32,13 +33,14 @@ const About: React.FC = () => {
             <span className="font-bold">
               <AnimatePresence mode="wait">
                 <motion.span
-                  key={words[index]}
+                  key={words[wordIndex]}
                   initial={{ y: "100%", opacity: 0 }}
                   animate={{ y: "0%", opacity: 1 }}
                   exit={{ y: "-100%", opacity: 0 }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
+                  className="inline-block"
                 >
-                  {words[index]}
+                  {words[wordIndex]}
                 </motion.span>
               </AnimatePresence>
             </span>

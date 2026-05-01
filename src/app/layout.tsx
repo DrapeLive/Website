@@ -14,50 +14,71 @@ const alegreyaSans = Alegreya_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Drape - Software that defines YOU.",
+  metadataBase: new URL("https://drapelive.vercel.app"),
+
+  title: {
+    default: "Drape — Software that defines YOU.",
+    template: "%s | Drape",
+  },
+
   description:
-    "Drape builds custom web and mobile software solutions that elevate your business. From innovative web applications to intuitive mobile interfaces, we handle the software side so you can focus on your business.",
+    "Drape is a software and app development company based in Malappuram, Kerala, India. We build custom websites, mobile apps, and business software that modernise small and medium businesses — so you can focus on growth.",
+
   keywords: [
     "Drape",
-    "Software Development",
-    "Web Development",
-    "Mobile App Development",
-    "Custom Software",
+    "software development company in Malappuram",
+    "app development Kerala",
+    "website development company in India",
+    "mobile app development Kerala",
+    "IT company Malappuram",
+    "custom software Kerala",
+    "Flutter app developer India",
+    "business analytics Kerala",
     "React",
     "Next.js",
-    "TypeScript",
+    "Django",
     "UI/UX Design",
-    "Business Software Solutions",
   ],
+
   authors: [
     { name: "Fahad", url: "https://justfahad.me" },
     { name: "Muflih", url: "https://muflih.me" },
   ],
   creator: "Drape",
   publisher: "Drape",
-  metadataBase: new URL("https://drapelive.vercel.app"),
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: "https://drapelive.vercel.app",
+  },
+
   openGraph: {
-    title: "Drape - Software that defines YOU.",
+    title: "Drape — Software that defines YOU.",
     description:
-      "Drape builds custom web and mobile software solutions that elevate your business. From innovative web applications to intuitive mobile interfaces, we handle the software side so you can focus on your business.",
+      "Custom websites, mobile apps, and business software built by Drape — a software development company in Malappuram, Kerala. We handle the tech so you can focus on your business.",
     url: "https://drapelive.vercel.app",
     siteName: "Drape",
+    locale: "en_IN",
+    type: "website",
     images: [
       {
         url: "https://drapelive.vercel.app/opengraph-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Drape",
+        alt: "Drape — Software Development Company in Malappuram, Kerala",
       },
     ],
-    locale: "en_US",
-    type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Drape - Software that defines YOU.",
+    title: "Drape — Software that defines YOU.",
     description:
-      "Drape builds custom web and mobile software solutions that elevate your business. From innovative web applications to intuitive mobile interfaces, we handle the software side so you can focus on your business.",
+      "Custom websites, mobile apps, and business software built by Drape — a software development company in Malappuram, Kerala.",
     images: ["https://drapelive.vercel.app/opengraph-image.jpg"],
   },
 };
