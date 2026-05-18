@@ -37,6 +37,9 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "Django",
+    "drape",
+    "drapelive",
+    "services",
     "UI/UX Design",
   ],
 
