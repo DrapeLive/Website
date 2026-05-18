@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "StockFlow — B2B Order Management | Drape",
     description: "Real-time inventory tracking built by Drape.",
-    url: "https://drapelive.vercel.app/projects/stockflow",
+    url: "https://drapelive.in/projects/stockflow",
     siteName: "Drape",
     images: [
       {
-        url: "https://drapelive.vercel.app/projects/stockflow/stockflow-banner.jpg",
+        url: "https://drapelive.in/projects/stockflow/stockflow-banner.jpg",
         width: 1200,
         height: 630,
         alt: "StockFlow banner",
@@ -40,12 +40,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "StockFlow — B2B Order Management | Drape",
     description: "Real-time inventory tracking built by Drape.",
-    images: [
-      "https://drapelive.vercel.app/projects/stockflow/stockflow-banner.jpg",
-    ],
+    images: ["https://drapelive.in/projects/stockflow/stockflow-banner.jpg"],
   },
   alternates: {
-    canonical: "https://drapelive.vercel.app/projects/stockflow",
+    canonical: "https://drapelive.in/projects/stockflow",
   },
 };
 

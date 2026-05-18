@@ -14,7 +14,7 @@ const alegreyaSans = Alegreya_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://drapelive.vercel.app"),
+  metadataBase: new URL("https://drapelive.in"),
 
   title: {
     default: "Drape — Software that defines YOU.",
@@ -53,20 +53,20 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://drapelive.vercel.app",
+    canonical: "https://drapelive.in",
   },
 
   openGraph: {
     title: "Drape — Software that defines YOU.",
     description:
       "Custom websites, mobile apps, and business software built by Drape — a software development company in Malappuram, Kerala. We handle the tech so you can focus on your business.",
-    url: "https://drapelive.vercel.app",
+    url: "https://drapelive.in",
     siteName: "Drape",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://drapelive.vercel.app/opengraph-image.jpg",
+        url: "https://drapelive.in/opengraph-image.jpg",
         width: 1200,
         height: 630,
         alt: "Drape — Software Development Company in Malappuram, Kerala",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     title: "Drape — Software that defines YOU.",
     description:
       "Custom websites, mobile apps, and business software built by Drape — a software development company in Malappuram, Kerala.",
-    images: ["https://drapelive.vercel.app/opengraph-image.jpg"],
+    images: ["https://drapelive.in/opengraph-image.jpg"],
   },
 };
 
