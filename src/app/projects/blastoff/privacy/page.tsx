@@ -6,6 +6,27 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy — BlastOff | Drape",
   description: "Privacy policy for BlastOff — a casual infinite runner game.",
+  openGraph: {
+    title: "Privacy Policy — BlastOff | Drape",
+    description: "Privacy policy for BlastOff — a casual infinite runner game.",
+    url: "https://drapelive.in/projects/blastoff/privacy",
+    siteName: "Drape",
+    images: [
+      {
+        url: "https://drapelive.in/projects/blastoff/blastoff-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "BlastOff banner",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy — BlastOff | Drape",
+    description: "Privacy policy for BlastOff — a casual infinite runner game.",
+    images: ["https://drapelive.in/projects/blastoff/blastoff-banner.png"],
+  },
   alternates: {
     canonical: "https://drapelive.in/projects/blastoff/privacy",
   },

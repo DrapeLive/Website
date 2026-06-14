@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         siteName: "Drape",
         images: [
             {
-                url: "https://drapelive.in/projects/blastoff/blastoff-banner.jpg",
+                url: "https://drapelive.in/projects/blastoff/blastoff-banner.png",
                 width: 1200,
                 height: 630,
                 alt: "BlastOff banner",
