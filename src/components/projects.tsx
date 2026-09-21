@@ -86,6 +86,14 @@ const ProjectsSection: React.FC = () => {
             banner: "/projects/stockflow/stockflow-banner.jpg",
             tag: "Web App",
         },
+        {
+            title: "Omni Ledger",
+            description:
+                "Digital billing system for shop owners and small businesses — manage products, create professional bills in seconds, track paid and unpaid bills, and deliver each bill to customers via SMS.",
+            href: "/projects/omniledger",
+            banner: "/projects/omniledger/logo.png",
+            tag: "Web App",
+        },
     ];
 
     return (
