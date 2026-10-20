@@ -102,6 +102,14 @@ const ProjectsSection: React.FC = () => {
             banner: "/projects/paisabook/banner.png",
             tag: "App",
         },
+        {
+            title: "Polisum Kallanum",
+            description:
+                "Digital version of the traditional Kerala paper game — pick your secret role as King, Minister, Police, or Thief, and see if the police can catch the thief!",
+            href: "/projects/polisum_kallanum",
+            banner: "/projects/polisum_kallanum/banner.png",
+            tag: "Game",
+        },
     ];
 
     return (
