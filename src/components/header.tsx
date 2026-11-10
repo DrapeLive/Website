@@ -1,26 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "./navLink";
-import ContactForm from "./contactForm";
 import Image from "next/image";
 import { IconChevronRight, IconMenu2, IconX } from "@tabler/icons-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 
 export const Header: React.FC = () => {
-  const [contactOpen, setContactOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    if (!contactOpen) return;
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setContactOpen(false);
-    };
-
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [contactOpen]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -65,32 +52,32 @@ export const Header: React.FC = () => {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <NavLink href="#services">Services</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#faq">FAQs</NavLink>
-          <NavLink href="#about">About</NavLink>
-          <button
-            onClick={() => setContactOpen(true)}
+          <NavLink href="/#services">Services</NavLink>
+          <NavLink href="/#projects">Projects</NavLink>
+          <NavLink href="/#faq">FAQs</NavLink>
+          <NavLink href="/#about">About</NavLink>
+          <Link
+            href="/contact"
             className="cursor-pointer bg-black text-white px-3 h-9 rounded-lg hover:bg-gray-800 transition-colors flex items-center gap-2 text-lg"
           >
             <span className="px-2">Contact Drape</span>
             <span className="flex items-center h-9 border-l border-white/20 pl-2 justify-center">
               <IconChevronRight size={18} />
             </span>
-          </button>
+          </Link>
         </nav>
 
         {/* Mobile: Contact right */}
         <div className="flex md:hidden items-center">
-          <button
-            onClick={() => setContactOpen(true)}
+          <Link
+            href="/contact"
             className="cursor-pointer bg-black text-white px-3 h-8 rounded-lg hover:bg-gray-800 transition-colors flex items-center gap-1 text-sm"
           >
             <span className="px-1">Contact</span>
             <span className="flex items-center h-8 border-l border-white/20 pl-1.5 justify-center">
               <IconChevronRight size={14} />
             </span>
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -113,10 +100,10 @@ export const Header: React.FC = () => {
               className="px-5 py-4 flex flex-col"
             >
               {[
-                { href: "#services", label: "Services" },
-                { href: "#projects", label: "Projects" },
-                { href: "#faq", label: "FAQs" },
-                { href: "#about", label: "About" },
+                { href: "/#services", label: "Services" },
+                { href: "/#projects", label: "Projects" },
+                { href: "/#faq", label: "FAQs" },
+                { href: "/#about", label: "About" },
               ].map(({ href, label }, i) => (
                 <motion.div
                   key={href}
@@ -134,34 +121,6 @@ export const Header: React.FC = () => {
                   </Link>
                 </motion.div>
               ))}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Contact modal */}
-      <AnimatePresence>
-        {contactOpen && (
-          <motion.div
-            role="dialog"
-            aria-modal="true"
-            aria-label="Contact Drape"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
-            onClick={() => setContactOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0, y: 10 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 10 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative"
-            >
-              <ContactForm onClose={() => setContactOpen(false)} />
             </motion.div>
           </motion.div>
         )}

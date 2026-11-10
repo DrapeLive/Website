@@ -1,6 +1,7 @@
 import React from "react";
 import { IconMail } from "@tabler/icons-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
@@ -18,30 +19,30 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col items-center space-y-[15px]">
           <nav className="flex justify-center items-center gap-6">
-            <a
-              href="#about"
+            <Link
+              href="/#about"
               className="text-white hover:text-gray-300 transition-colors text-lg duration-200"
             >
               About Drape
-            </a>
-            <a
-              href="#services"
+            </Link>
+            <Link
+              href="/#services"
               className="text-white hover:text-gray-300 transition-colors text-lg duration-200"
             >
               Services
-            </a>
-            <a
-              href="#projects"
+            </Link>
+            <Link
+              href="/#projects"
               className="text-white hover:text-gray-300 transition-colors text-lg duration-200"
             >
               Projects
-            </a>
-            <a
-              href="#team"
+            </Link>
+            <Link
+              href="/#team"
               className="text-white hover:text-gray-300 transition-colors text-lg duration-200"
             >
               The Team
-            </a>
+            </Link>
           </nav>
           <a
             href="mailto:drapelive@gmail.com"

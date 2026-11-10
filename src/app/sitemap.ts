@@ -9,6 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${SITE_URL}/contact`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 
   for (const project of projects) {
