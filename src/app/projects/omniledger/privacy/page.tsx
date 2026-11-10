@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Omni Ledger | Drape",
+  title: "Privacy Policy — Omni Ledger",
   description:
     "Privacy policy for Omni Ledger — a digital billing system for shop owners and small businesses.",
   openGraph: {
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     siteName: "Drape",
     images: [
       {
-        url: "https://drapelive.in/projects/omniledger/logo.png",
-        width: 1024,
-        height: 1024,
+        url: "https://drapelive.in/og/omniledger.jpg",
+        width: 1200,
+        height: 630,
         alt: "Omni Ledger logo",
       },
     ],
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy — Omni Ledger | Drape",
     description:
       "Privacy policy for Omni Ledger — a digital billing system for shop owners and small businesses.",
-    images: ["https://drapelive.in/projects/omniledger/logo.png"],
+    images: ["https://drapelive.in/og/omniledger.jpg"],
   },
   alternates: {
     canonical: "https://drapelive.in/projects/omniledger/privacy",
@@ -50,7 +50,7 @@ const PrivacyPage: React.FC = () => {
         </div>
       </header>
 
-      <main className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
+      <main id="main-content" className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-2">
             Privacy Policy

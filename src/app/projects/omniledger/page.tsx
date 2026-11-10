@@ -14,11 +14,15 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ProjectFooter } from "@/components/project-footer";
+import { breadcrumbSchema, softwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Omni Ledger — Digital Billing System | Drape",
+    title: "Omni Ledger — Digital Billing System",
     description:
-        "Omni Ledger is a complete digital billing system for shop owners and small businesses — manage products and prices, create professional bills in seconds, track paid and unpaid bills, and send every bill to customers via SMS.",
+        "Omni Ledger is a digital billing system for shops and small businesses — manage products, create bills in seconds, track payments, and send bills by SMS.",
     keywords: [
         "billing system",
         "digital billing",
@@ -37,9 +41,9 @@ export const metadata: Metadata = {
         siteName: "Drape",
         images: [
             {
-                url: "https://drapelive.in/projects/omniledger/logo.png",
-                width: 1024,
-                height: 1024,
+                url: "https://drapelive.in/og/omniledger.jpg",
+                width: 1200,
+                height: 630,
                 alt: "Omni Ledger logo",
             },
         ],
@@ -50,12 +54,17 @@ export const metadata: Metadata = {
         title: "Omni Ledger — Digital Billing System | Drape",
         description:
             "Professional digital billing for shop owners and small businesses.",
-        images: ["https://drapelive.in/projects/omniledger/logo.png"],
+        images: ["https://drapelive.in/og/omniledger.jpg"],
     },
     alternates: {
         canonical: "https://drapelive.in/projects/omniledger",
     },
 };
+
+const itemBreadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Omni Ledger", path: "/projects/omniledger" },
+];
 
 const OmniLedgerPage: React.FC = () => {
     const capabilities = [
@@ -135,6 +144,19 @@ const OmniLedgerPage: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-beige-light">
+            <JsonLd
+                data={[
+                    softwareApplicationSchema({
+                        name: "Omni Ledger",
+                        description:
+                            "A digital billing system for shop owners and small businesses — manage products, create bills in seconds, and send them to customers by SMS.",
+                        applicationCategory: "BusinessApplication",
+                        path: "/projects/omniledger",
+                        image: "/projects/omniledger/logo.png",
+                    }),
+                    breadcrumbSchema(itemBreadcrumbs),
+                ]}
+            />
             <header className="fixed top-0 left-0 right-0 z-50 bg-beige-light">
                 <div className="max-w-7xl mx-auto px-4 md:px-0 py-6">
                     <Link
@@ -147,8 +169,14 @@ const OmniLedgerPage: React.FC = () => {
                 </div>
             </header>
 
-            <main className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
+            <main id="main-content" className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
                 <div className="max-w-4xl mx-auto">
+                    <Breadcrumbs
+                        items={[
+                            { label: "Home", href: "/" },
+                            { label: "Omni Ledger" },
+                        ]}
+                    />
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16">
                         <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center">
                             <Image
@@ -259,6 +287,7 @@ const OmniLedgerPage: React.FC = () => {
                                             }`}
                                             width={300}
                                             height={640}
+                                            sizes="(min-width: 768px) 33vw, 100vw"
                                             className="w-full h-auto object-cover"
                                         />
                                     </div>
@@ -277,6 +306,7 @@ const OmniLedgerPage: React.FC = () => {
                     </div>
                 </div>
             </main>
+            <ProjectFooter currentSlug="omniledger" />
         </div>
     );
 };

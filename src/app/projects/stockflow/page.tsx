@@ -1,7 +1,6 @@
 import React from "react";
 import {
   IconArrowLeft,
-  IconPackage,
   IconCheck,
   IconUsers,
   IconShoppingCart,
@@ -10,9 +9,13 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ProjectFooter } from "@/components/project-footer";
+import { breadcrumbSchema, softwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "StockFlow — Inventory Management | Drape",
+  title: "StockFlow — Inventory Management",
   description:
     "StockFlow is a real-time B2B order management system built by Drape — a software development company in India specialising in custom web and app development.",
   keywords: [
@@ -46,6 +49,11 @@ export const metadata: Metadata = {
     canonical: "https://drapelive.in/projects/stockflow",
   },
 };
+
+const itemBreadcrumbs = [
+  { name: "Home", path: "/" },
+  { name: "StockFlow", path: "/projects/stockflow" },
+];
 
 const StockFlowPage: React.FC = () => {
   const userTypes = [
@@ -150,6 +158,19 @@ const StockFlowPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-beige-light">
+      <JsonLd
+        data={[
+          softwareApplicationSchema({
+            name: "StockFlow",
+            description:
+              "B2B order management platform for apparel and textile businesses with real-time inventory tracking and a mobile-first workflow.",
+            applicationCategory: "BusinessApplication",
+            path: "/projects/stockflow",
+            image: "/projects/stockflow/stockflow-logo.png",
+          }),
+          breadcrumbSchema(itemBreadcrumbs),
+        ]}
+      />
       <header className="fixed top-0 left-0 right-0 z-50 bg-beige-light">
         <div className="max-w-7xl mx-auto px-4 md:px-0 py-6">
           <Link
@@ -162,8 +183,11 @@ const StockFlowPage: React.FC = () => {
         </div>
       </header>
 
-      <main className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
+      <main id="main-content" className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
         <div className="max-w-4xl mx-auto">
+          <Breadcrumbs
+            items={[{ label: "Home", href: "/" }, { label: "StockFlow" }]}
+          />
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16">
             <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center">
               <Image
@@ -175,7 +199,7 @@ const StockFlowPage: React.FC = () => {
               />
             </div>
             <div className="text-center md:text-left">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">stockFlow</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">StockFlow</h1>
               <p className="text-xl md:text-2xl text-gray-600">
                 B2B Order Management Platform
               </p>
@@ -294,6 +318,7 @@ const StockFlowPage: React.FC = () => {
           </div>
         </div>
       </main>
+      <ProjectFooter currentSlug="stockflow" />
     </div>
   );
 };

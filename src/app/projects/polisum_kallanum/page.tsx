@@ -13,11 +13,15 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ProjectFooter } from "@/components/project-footer";
+import { breadcrumbSchema, softwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Polisum Kallanum — Traditional Kerala Paper Game | Drape",
+    title: "Polisum Kallanum — Kerala Paper Game",
     description:
-        "Polisum Kallanum (പോലീസും കള്ളനും) is a traditional Kerala paper game where players secretly pick character slips — can the police catch the thief? A fun social game for friends and family.",
+        "Polisum Kallanum is a digital version of the traditional Kerala paper game. Pick a role as King, Minister, Police or Thief — can the police catch the thief?",
     keywords: [
         "polisum kallanum",
         "policeum kallanum",
@@ -36,7 +40,7 @@ export const metadata: Metadata = {
         siteName: "Drape",
         images: [
             {
-                url: "https://drapelive.in/projects/polisum_kallanum/banner.png",
+                url: "https://drapelive.in/og/polisum_kallanum.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Polisum Kallanum banner",
@@ -49,14 +53,17 @@ export const metadata: Metadata = {
         title: "Polisum Kallanum — Traditional Kerala Paper Game | Drape",
         description:
             "Pick your secret role, hide from the police, or catch the thief — a fun game for everyone.",
-        images: [
-            "https://drapelive.in/projects/polisum_kallanum/banner.png",
-        ],
+        images: ["https://drapelive.in/og/polisum_kallanum.jpg"],
     },
     alternates: {
         canonical: "https://drapelive.in/projects/polisum_kallanum",
     },
 };
+
+const itemBreadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Polisum Kallanum", path: "/projects/polisum_kallanum" },
+];
 
 const PolisumKallanumPage: React.FC = () => {
     const characters = [
@@ -142,6 +149,19 @@ const PolisumKallanumPage: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-beige-light">
+            <JsonLd
+                data={[
+                    softwareApplicationSchema({
+                        name: "Polisum Kallanum",
+                        description:
+                            "A digital version of the traditional Kerala paper game where players pick a secret role as King, Minister, Police or Thief.",
+                        applicationCategory: "GameApplication",
+                        path: "/projects/polisum_kallanum",
+                        image: "/projects/polisum_kallanum/banner.png",
+                    }),
+                    breadcrumbSchema(itemBreadcrumbs),
+                ]}
+            />
             <header className="fixed top-0 left-0 right-0 z-50 bg-beige-light">
                 <div className="max-w-7xl mx-auto px-4 md:px-0 py-6">
                     <Link
@@ -154,8 +174,14 @@ const PolisumKallanumPage: React.FC = () => {
                 </div>
             </header>
 
-            <main className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
+            <main id="main-content" className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
                 <div className="max-w-4xl mx-auto">
+                    <Breadcrumbs
+                        items={[
+                            { label: "Home", href: "/" },
+                            { label: "Polisum Kallanum" },
+                        ]}
+                    />
                     {/* Hero */}
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16">
                         <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center overflow-hidden">
@@ -488,6 +514,7 @@ const PolisumKallanumPage: React.FC = () => {
                                             alt={`Polisum Kallanum screenshot ${index + 1}`}
                                             width={300}
                                             height={640}
+                                            sizes="(min-width: 768px) 33vw, 100vw"
                                             className="w-full h-auto object-cover"
                                         />
                                     </div>
@@ -506,6 +533,7 @@ const PolisumKallanumPage: React.FC = () => {
                     </div>
                 </div>
             </main>
+            <ProjectFooter currentSlug="polisum_kallanum" />
         </div>
     );
 };

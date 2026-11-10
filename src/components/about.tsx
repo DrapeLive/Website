@@ -24,14 +24,12 @@ const About: React.FC = () => {
 
         <div className="flex flex-col md:flex-row mb-[60px] items-center md:items-start gap-8">
           <h3 className="md:w-1/2 text-2xl lg:text-[28px] md:leading-8 text-center md:text-left">
-            We are a set of students fueled by the passion to build meaningful
-            softwares. Having built many softwares ourselves - we assure quality
-            and consistency
+            We build meaningful software with a focus on quality and consistency.
           </h3>
           <div className="md:w-1/2 text-4xl md:leading-8 md:text-[50px] text-center md:text-left">
             <span>We build </span>
             <span className="font-bold">
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.span
                   key={words[wordIndex]}
                   initial={{ y: "100%", opacity: 0 }}

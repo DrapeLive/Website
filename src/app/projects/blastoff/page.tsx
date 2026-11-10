@@ -3,7 +3,6 @@ import {
     IconArrowLeft,
     IconStar,
     IconShield,
-    IconBolt,
     IconBrush,
     IconSticker,
     IconAlertTriangle,
@@ -12,9 +11,13 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ProjectFooter } from "@/components/project-footer";
+import { breadcrumbSchema, softwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "BlastOff — Casual Infinite Runner | Drape",
+    title: "BlastOff — Casual Infinite Runner",
     description:
         "BlastOff is a casual endless runner with vector graphics — avoid obstacles, collect stars, and survive for high scores. Available on Android, Linux and Web.",
     keywords: [
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
         siteName: "Drape",
         images: [
             {
-                url: "https://drapelive.in/projects/blastoff/blastoff-banner.png",
+                url: "https://drapelive.in/og/blastoff.jpg",
                 width: 1200,
                 height: 630,
                 alt: "BlastOff banner",
@@ -46,12 +49,17 @@ export const metadata: Metadata = {
         title: "BlastOff — Casual Infinite Runner | Drape",
         description:
             "Avoid obstacles, collect stars, and customize your rocket in this open-source endless runner.",
-        images: ["https://drapelive.in/projects/blastoff/blastoff-banner.png"],
+        images: ["https://drapelive.in/og/blastoff.jpg"],
     },
     alternates: {
         canonical: "https://drapelive.in/projects/blastoff",
     },
 };
+
+const itemBreadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "BlastOff", path: "/projects/blastoff" },
+];
 
 const BlastOffPage: React.FC = () => {
     const features = [
@@ -146,6 +154,20 @@ const BlastOffPage: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-beige-light">
+            <JsonLd
+                data={[
+                    softwareApplicationSchema({
+                        name: "BlastOff",
+                        description:
+                            "A casual endless runner game with vector graphics — dodge obstacles, collect stars, and customize your rocket.",
+                        applicationCategory: "GameApplication",
+                        operatingSystem: "Android, Linux, Web",
+                        path: "/projects/blastoff",
+                        image: "/projects/blastoff/blastoff-banner.png",
+                    }),
+                    breadcrumbSchema(itemBreadcrumbs),
+                ]}
+            />
             <header className="fixed top-0 left-0 right-0 z-50 bg-beige-light">
                 <div className="max-w-7xl mx-auto px-4 md:px-0 py-6">
                     <Link
@@ -158,8 +180,14 @@ const BlastOffPage: React.FC = () => {
                 </div>
             </header>
 
-            <main className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
+            <main id="main-content" className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
                 <div className="max-w-4xl mx-auto">
+                    <Breadcrumbs
+                        items={[
+                            { label: "Home", href: "/" },
+                            { label: "BlastOff" },
+                        ]}
+                    />
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16">
                         <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center">
                             <Image
@@ -289,10 +317,11 @@ const BlastOffPage: React.FC = () => {
                                         className="bg-white rounded-xl overflow-hidden border border-gray-100"
                                     >
                                         <Image
-                                            src={`https://raw.githubusercontent.com/Ranger-NF/BlastOff/main/Docs/Screenshots/latest/${num}.png`}
+                                            src={`/projects/blastoff/screenshots/${num}.png`}
                                             alt={`BlastOff screenshot ${num}`}
                                             width={200}
                                             height={400}
+                                            sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
                                             className="w-full h-auto object-cover"
                                         />
                                     </div>
@@ -357,6 +386,7 @@ const BlastOffPage: React.FC = () => {
                     </div>
                 </div>
             </main>
+            <ProjectFooter currentSlug="blastoff" />
         </div>
     );
 };

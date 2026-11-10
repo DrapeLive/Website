@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { IconArrowRight, IconPackage } from "@tabler/icons-react";
 import Link from "next/link";
@@ -30,6 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                             alt={title}
                             width={600}
                             height={340}
+                            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                             className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                     ) : (

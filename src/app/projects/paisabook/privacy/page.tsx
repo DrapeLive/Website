@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Paisa Book | Drape",
+  title: "Privacy Policy — Paisa Book",
   description:
     "Privacy policy for Paisa Book — a money management and expense tracking app.",
   openGraph: {
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     siteName: "Drape",
     images: [
       {
-        url: "https://drapelive.in/projects/paisabook/banner.png",
-        width: 1774,
-        height: 887,
+        url: "https://drapelive.in/og/paisabook.jpg",
+        width: 1200,
+        height: 630,
         alt: "Paisa Book banner",
       },
     ],
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy — Paisa Book | Drape",
     description:
       "Privacy policy for Paisa Book — a money management and expense tracking app.",
-    images: ["https://drapelive.in/projects/paisabook/banner.png"],
+    images: ["https://drapelive.in/og/paisabook.jpg"],
   },
   alternates: {
     canonical: "https://drapelive.in/projects/paisabook/privacy",
@@ -50,7 +50,7 @@ const PrivacyPage: React.FC = () => {
         </div>
       </header>
 
-      <main className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
+      <main id="main-content" className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-2">
             Privacy Policy

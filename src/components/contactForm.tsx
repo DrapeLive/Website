@@ -60,6 +60,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
       <h2 className="text-4xl font-bold mb-6 text-center">Contact Drape</h2>
       {status && (
         <p
+          role="status"
+          aria-live="polite"
           className={`mb-4 text-center ${status.startsWith("Error") ? "text-red-500" : "text-green-500"}`}
         >
           {status}
@@ -115,10 +117,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
         ></textarea>
       </div>
       <div className="flex items-center gap-15 justify-between">
-        <button className="cursor-pointer hover:underline" onClick={onClose}>
+        <button
+          type="button"
+          className="cursor-pointer hover:underline"
+          onClick={onClose}
+        >
           Cancel
         </button>
-        <button className="cursor-pointer bg-black text-white px-4 md:px-6 py-2 md:py-2.5 rounded-[15px] hover:bg-gray-800 transition-colors flex items-center gap-2 text-sm md:text-lg md:text-base font-medium">
+        <button
+          type="submit"
+          className="cursor-pointer bg-black text-white px-4 md:px-6 py-2 md:py-2.5 rounded-[15px] hover:bg-gray-800 transition-colors flex items-center gap-2 text-sm md:text-lg md:text-base font-medium"
+        >
           {loading ? "Sending..." : "Send Message"}
         </button>
       </div>

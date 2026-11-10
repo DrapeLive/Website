@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 
 const faqs = [
   {
@@ -46,12 +48,20 @@ const faqs = [
 
 const FAQItem: React.FC<{
   faq: (typeof faqs)[0];
+  index: number;
   isOpen: boolean;
   onToggle: () => void;
-}> = ({ faq, isOpen, onToggle }) => {
+}> = ({ faq, index, isOpen, onToggle }) => {
+  const buttonId = `faq-question-${index}`;
+  const panelId = `faq-answer-${index}`;
+
   return (
     <div className="border border-neutral-800 rounded-xl mb-3 overflow-hidden">
       <button
+        type="button"
+        id={buttonId}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
         onClick={onToggle}
         className="w-full flex items-center justify-between px-5 py-4 text-left text-[15px] font-medium text-black hover:text-white hover:bg-neutral-800 transition-colors gap-3"
       >
@@ -70,34 +80,23 @@ const FAQItem: React.FC<{
         </span>
       </button>
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            key="body"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <div className="px-5 py-2">
-              <p className="text-lg text-neutral-600 leading-relaxed mb-3">
-                {faq.a}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {faq.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[12px] px-3 py-1 rounded-full  text-neutral-700"
-                  >
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Answers stay in the DOM so their text is crawlable and readable */}
+      <motion.div
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
+        aria-hidden={!isOpen}
+        initial={false}
+        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className="overflow-hidden"
+      >
+        <div className="px-5 py-2">
+          <p className="text-lg text-neutral-600 leading-relaxed mb-3">
+            {faq.a}
+          </p>
+        </div>
+      </motion.div>
     </div>
   );
 };
@@ -109,9 +108,9 @@ const Faq: React.FC = () => {
     <section id="faq" className="px-5 md:px-0 py-20 md:py-32">
       <div className="max-w-7xl mx-auto ">
         <div className="mb-10 text-center md:text-left">
-          <h2 className="text-center md:text-center mb-8 md:mb-12 font-bold text-5xl leading-12 lg:text-[64px]">
+          <p className="text-center mb-2 text-lg font-medium text-[#636B2F]">
             Got questions?
-          </h2>
+          </p>
           <h2 className="text-center text-3xl lg:text-4xl font-bold mb-3 w-full justify-center">
             Frequently asked questions
           </h2>
@@ -126,6 +125,7 @@ const Faq: React.FC = () => {
             <FAQItem
               key={i}
               faq={faq}
+              index={i}
               isOpen={openFaq === i}
               onToggle={() => setOpenFaq(openFaq === i ? null : i)}
             />
@@ -133,10 +133,10 @@ const Faq: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-10 p-6 rounded-2xl border border-neutral-200 border-neutral-800 bg-neutral-50 bg-neutral-900 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+        <div className="mt-10 p-6 rounded-2xl border border-neutral-800 bg-neutral-900 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
           <div>
             <p className="font-medium text-neutral-100 text-base">
-              Still have questions? Let's talk.
+              Still have questions? Let&apos;s talk.
             </p>
             <p className="text-sm text-neutral-400 mt-0.5">
               Reach out on Instagram or email — we reply fast.

@@ -18,11 +18,15 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ProjectFooter } from "@/components/project-footer";
+import { breadcrumbSchema, softwareApplicationSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Paisa Book — Expense Tracker | Drape",
+    title: "Paisa Book — Expense Tracker",
     description:
-        "Paisa Book is a personal finance management app to track income and expenses — record transactions in seconds, organise spending by categories, and see a clear overview of your finances with charts.",
+        "Paisa Book is a personal finance app to track income and expenses. Record transactions, organise spending by category, and see where your money goes.",
     keywords: [
         "expense tracker",
         "expense manager",
@@ -42,9 +46,9 @@ export const metadata: Metadata = {
         siteName: "Drape",
         images: [
             {
-                url: "https://drapelive.in/projects/paisabook/banner.png",
-                width: 1774,
-                height: 887,
+                url: "https://drapelive.in/og/paisabook.jpg",
+                width: 1200,
+                height: 630,
                 alt: "Paisa Book banner",
             },
         ],
@@ -55,12 +59,17 @@ export const metadata: Metadata = {
         title: "Paisa Book — Expense Tracker | Drape",
         description:
             "A simple, clean, and user-friendly money manager for everyone.",
-        images: ["https://drapelive.in/projects/paisabook/banner.png"],
+        images: ["https://drapelive.in/og/paisabook.jpg"],
     },
     alternates: {
         canonical: "https://drapelive.in/projects/paisabook",
     },
 };
+
+const itemBreadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Paisa Book", path: "/projects/paisabook" },
+];
 
 const PaisaBookPage: React.FC = () => {
     const capabilities = [
@@ -166,6 +175,20 @@ const PaisaBookPage: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-beige-light">
+            <JsonLd
+                data={[
+                    softwareApplicationSchema({
+                        name: "Paisa Book",
+                        description:
+                            "A personal finance app to track income and expenses, organise spending by category, and understand where your money goes.",
+                        applicationCategory: "FinanceApplication",
+                        operatingSystem: "Android, iOS",
+                        path: "/projects/paisabook",
+                        image: "/projects/paisabook/banner.png",
+                    }),
+                    breadcrumbSchema(itemBreadcrumbs),
+                ]}
+            />
             <header className="fixed top-0 left-0 right-0 z-50 bg-beige-light">
                 <div className="max-w-7xl mx-auto px-4 md:px-0 py-6">
                     <Link
@@ -178,8 +201,14 @@ const PaisaBookPage: React.FC = () => {
                 </div>
             </header>
 
-            <main className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
+            <main id="main-content" className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
                 <div className="max-w-4xl mx-auto">
+                    <Breadcrumbs
+                        items={[
+                            { label: "Home", href: "/" },
+                            { label: "Paisa Book" },
+                        ]}
+                    />
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16">
                         <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center">
                             <Image
@@ -321,6 +350,7 @@ const PaisaBookPage: React.FC = () => {
                                             }`}
                                             width={300}
                                             height={640}
+                                            sizes="(min-width: 768px) 33vw, 100vw"
                                             className="w-full h-auto object-cover"
                                         />
                                     </div>
@@ -339,6 +369,7 @@ const PaisaBookPage: React.FC = () => {
                     </div>
                 </div>
             </main>
+            <ProjectFooter currentSlug="paisabook" />
         </div>
     );
 };

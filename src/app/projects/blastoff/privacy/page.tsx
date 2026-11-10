@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — BlastOff | Drape",
+  title: "Privacy Policy — BlastOff",
   description: "Privacy policy for BlastOff — a casual infinite runner game.",
   openGraph: {
     title: "Privacy Policy — BlastOff | Drape",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "Drape",
     images: [
       {
-        url: "https://drapelive.in/projects/blastoff/blastoff-banner.png",
+        url: "https://drapelive.in/og/blastoff.jpg",
         width: 1200,
         height: 630,
         alt: "BlastOff banner",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Privacy Policy — BlastOff | Drape",
     description: "Privacy policy for BlastOff — a casual infinite runner game.",
-    images: ["https://drapelive.in/projects/blastoff/blastoff-banner.png"],
+    images: ["https://drapelive.in/og/blastoff.jpg"],
   },
   alternates: {
     canonical: "https://drapelive.in/projects/blastoff/privacy",
@@ -47,7 +47,7 @@ const PrivacyPage: React.FC = () => {
         </div>
       </header>
 
-      <main className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
+      <main id="main-content" className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-2">
             Privacy Policy

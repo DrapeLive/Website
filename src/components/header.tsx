@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "./navLink";
 import ContactForm from "./contactForm";
 import Image from "next/image";
@@ -11,6 +11,17 @@ export const Header: React.FC = () => {
   const [contactOpen, setContactOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (!contactOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setContactOpen(false);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [contactOpen]);
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 md:px-0 bg-[#F3EEE7] py-6 flex items-center justify-between">
@@ -20,6 +31,8 @@ export const Header: React.FC = () => {
             onClick={() => setMenuOpen((v) => !v)}
             className="p-2 rounded-lg hover:bg-black/5 transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
@@ -38,13 +51,16 @@ export const Header: React.FC = () => {
 
         {/* Logo — centered on mobile, left on desktop */}
         <div className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
-          <Image
-            src="/drape-logo.svg"
-            alt="Drape Logo"
-            className="w-[30px] h-[30px] md:w-10 md:h-10"
-            width={40}
-            height={40}
-          />
+          <Link href="/" aria-label="Drape home">
+            <Image
+              src="/drape-logo.svg"
+              alt="Drape"
+              className="w-[30px] h-[30px] md:w-10 md:h-10"
+              width={40}
+              height={40}
+              priority
+            />
+          </Link>
         </div>
 
         {/* Desktop nav */}
@@ -82,6 +98,7 @@ export const Header: React.FC = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -126,6 +143,9 @@ export const Header: React.FC = () => {
       <AnimatePresence>
         {contactOpen && (
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Contact Drape"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

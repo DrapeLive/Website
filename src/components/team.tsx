@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { IconArrowRight } from "@tabler/icons-react";
 interface TeamMember {
   name: string;
@@ -27,10 +28,7 @@ const TeamSection: React.FC = () => {
     <div id="team" className="max-w-7xl mx-auto px-5 md:px-0 py-20 md:py-32">
       <div className="w-full max-w-5xl">
         <div className="bg-[#CFDBC2] rounded-lg p-6 md:p-12">
-          <h2 className="hidden md:flex text-2xl md:text-5xl font-bold mb-6 md:mb-8">
-            The Team
-          </h2>
-          <h2 className="md:hidden text-center text-4xl font-bold pb-6 ">
+          <h2 className="text-center md:text-left text-4xl md:text-5xl font-bold mb-6 md:mb-8">
             The Team
           </h2>
 
@@ -39,9 +37,12 @@ const TeamSection: React.FC = () => {
             {teamMembers.map((member, index) => (
               <div key={index} className="flex gap-8">
                 <div className="flex rounded-lg items-center justify-center">
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
+                    width={480}
+                    height={480}
+                    sizes="160px"
                     className="w-full h-auto object-cover max-w-40"
                   />
                 </div>
@@ -72,9 +73,12 @@ const TeamSection: React.FC = () => {
                 className="flex flex-col items-center text-center"
               >
                 <div className="w-30 h-30 rounded-lg overflow-hidden mb-3 bg-green-300">
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
+                    width={480}
+                    height={480}
+                    sizes="120px"
                     className="w-full h-full object-cover"
                   />
                 </div>

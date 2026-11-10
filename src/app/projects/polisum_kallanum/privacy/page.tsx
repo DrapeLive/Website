@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Privacy Policy — Polisum Kallanum | Drape",
+    title: "Privacy Policy — Polisum Kallanum",
     description:
         "Privacy policy for Polisum Kallanum (പോലീസും കള്ളനും) — a traditional Kerala paper game for Android.",
     openGraph: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         siteName: "Drape",
         images: [
             {
-                url: "https://drapelive.in/projects/polisum_kallanum/banner.png",
+                url: "https://drapelive.in/og/polisum_kallanum.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Polisum Kallanum banner",
@@ -28,9 +28,7 @@ export const metadata: Metadata = {
         title: "Privacy Policy — Polisum Kallanum | Drape",
         description:
             "Privacy policy for Polisum Kallanum — a traditional Kerala paper game.",
-        images: [
-            "https://drapelive.in/projects/polisum_kallanum/banner.png",
-        ],
+        images: ["https://drapelive.in/og/polisum_kallanum.jpg"],
     },
     alternates: {
         canonical:
@@ -53,7 +51,7 @@ const PrivacyPage: React.FC = () => {
                 </div>
             </header>
 
-            <main className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
+            <main id="main-content" className="pt-24 md:pt-32 px-5 md:px-0 pb-20">
                 <div className="max-w-3xl mx-auto">
                     <h1 className="text-4xl md:text-5xl font-bold mb-2">
                         Privacy Policy
